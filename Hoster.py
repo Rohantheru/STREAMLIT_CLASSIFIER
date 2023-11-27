@@ -46,17 +46,17 @@ if task == "TEXT_CLASSIFICATION":
 
         # Load models dynamically based on the selected option
         if model_option == "Perceptron":
-            with open('MODELS\PERCEP_MODEL.pkl', 'rb') as file:
+            with open('PERCEP_MODEL.pkl', 'rb') as file:
                 model = pickle.load(file)
         elif model_option == "Backpropagation":
-            with open('MODELS\Back_Prop.pkl', 'rb') as file:
+            with open('Back_Prop.pkl', 'rb') as file:
                 model = pickle.load(file)
         elif model_option == "DNN":
-            model = load_model('MODELS\DNN_MODEL.keras')
+            model = load_model('DNN_MODEL.keras')
         elif model_option == "RNN":
-            model = load_model('MODELS\RNN_MODEL.keras')
+            model = load_model('RNN_MODEL.keras')
         elif model_option == "LSTM":
-            model = load_model('MODELS\LSTM_MODEL.keras')
+            model = load_model('LSTM_MODEL.keras')
 
         if st.button("Classify Sentiment"):
             result = sentiment_classification(new_review_text, model)
